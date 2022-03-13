@@ -1,0 +1,738 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  height: 100vh;
+  width: 100%;
+  min-width: 350px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+a {
+  text-decoration: none;
+  color: #000;
+}
+
+@keyframes shake {
+  0% {
+    -webkit-transform: translate(1);
+    transform: scale(1);
+    text-shadow: 0 0 7px #fff;
+  }
+  50% {
+    -webkit-transform: scale(1.3);
+    transform: scale(1.3);
+    text-shadow: 0 0 7px #353535;
+  }
+}
+@keyframes jump {
+  33% {
+    text-shadow: 0 60px #9356DC, 0 150px #9356DC;
+  }
+  50% {
+    transform: translate(0, 0) rotate(-4deg);
+    text-shadow: 0 0px #FF79DA, 0 0px #FF79DA;
+  }
+  66.67% {
+    text-shadow: 0 -60px #99E2D0, 0 -150px #99E2D0;
+  }
+}
+@keyframes flash {
+  0% {
+    -webkit-transform: translate(1);
+    transform: scale(1.8);
+    text-shadow: 0 0 7px #fff;
+  }
+  50% {
+    -webkit-transform: translate(1);
+    transform: translate(1.8);
+    text-shadow: 0 0 7px #353535;
+  }
+}
+@keyframes rotate {
+  from {
+    -webkit-transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+  }
+}
+@keyframes rotateCheck {
+  from {
+    -webkit-transform: rotate(180deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+  }
+}
+@keyframes loader {
+  0% {
+    opacity: 1;
+  }
+  33% {
+    opacity: 0.5;
+  }
+  66% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes load {
+  0% {
+    opacity: 0;
+  }
+  33% {
+    opacity: 0;
+  }
+  66% {
+    opacity: 0.1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes scaleUpRight {
+  0% {
+    -webkit-transform: scaleX(0.1);
+    transform: scaleX(0.1);
+    -webkit-transform-origin: 100% 100%;
+    transform-origin: 100% 100%;
+  }
+  100% {
+    -webkit-transform: scaleX(1);
+    transform: scaleX(1);
+    -webkit-transform-origin: 100% 100%;
+    transform-origin: 100% 100%;
+  }
+}
+.loader {
+  background: linear-gradient(to right, #9356dc, #ff79da);
+  width: 100%;
+  height: 100%;
+  line-height: 100%;
+  font-family: "Shrikhand", cursive;
+  vertical-align: middle;
+  text-align: center;
+  position: fixed;
+  z-index: 9999;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  animation: loader 1s ease-in-out 2s forwards;
+}
+.loader .loader-logo {
+  vertical-align: middle;
+  position: fixed;
+  top: 40%;
+  text-align: center;
+  width: 100vw;
+}
+.loader .loader-logo span {
+  width: 5px;
+  height: 20px;
+  padding-right: 1em;
+  -webkit-text-stroke-width: 1.25px;
+  -webkit-text-stroke-color: #000;
+  font-size: 50px;
+  text-shadow: 0 0px #99E2D0, 0 0px #99E2D0;
+  transform: translate(0, 100%) rotate(4deg);
+  display: inline-block;
+  font-family: "Shrikhand", cursive;
+  color: #fff;
+  animation: jump 2s ease-in-out infinite;
+}
+@media screen and (max-width: 900px) {
+  .loader .loader-logo span {
+    font-size: 30px;
+  }
+}
+.loader .loader-i {
+  vertical-align: middle;
+  position: absolute;
+  top: 50%;
+  left: 45%;
+  animation: rotate 1s linear infinite;
+}
+.loader .loader-i i {
+  font-size: 50px;
+}
+
+header {
+  font-family: "Shrikhand", cursive;
+  background: #fff;
+  text-align: center;
+  padding: 20px;
+  box-shadow: 0 5px 5px 0 #ddd;
+}
+header i {
+  font-size: 1.5rem;
+  padding-left: 50px;
+  position: relative;
+  left: -50%;
+  top: 40px;
+}
+main {
+  position: relative;
+  top: 10px;
+}
+@media screen and (max-width: 900px) {
+  main {
+    width: 100%;
+  }
+}
+
+footer {
+  height: 120px;
+  background: #353535;
+  position: relative;
+  padding: 0 30px;
+}
+@media screen and (max-width: 1350px) {
+  footer {
+    top: 650px;
+  }
+}
+@media screen and (max-width: 900px) {
+  footer {
+    height: 230px;
+  }
+  footer .bloc {
+    width: auto;
+    display: flex;
+    flex-flow: column nowrap;
+  }
+}
+footer h3 {
+  color: #fff;
+  font-family: "Shrikhand", cursive;
+  padding: 30px 0;
+}
+@media screen and (max-width: 900px) {
+  footer h3 {
+    display: flex;
+    justify-content: center;
+  }
+}
+footer ul {
+  max-width: 700px;
+  list-style: none;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+}
+@media screen and (max-width: 900px) {
+  footer ul {
+    display: block;
+    text-align: center;
+    width: auto;
+  }
+}
+@media screen and (max-width: 900px) {
+  footer ul li {
+    padding-bottom: 10px;
+  }
+}
+footer ul li:hover {
+  text-decoration: underline;
+}
+footer ul li a,
+footer ul li i {
+  padding-right: 5px;
+  color: white;
+}
+
+.footer {
+  top: 240px;
+}
+@media screen and (max-width: 900px) {
+  .footer {
+    top: 1050px;
+  }
+}
+
+.main-localisation {
+  background: #fff;
+  text-align: center;
+  padding: 20px;
+  color: #353535;
+  padding: 10px;
+}
+.main-localisation i {
+  margin-right: 10px;
+}
+
+.main-discover {
+  background: #f0ecec;
+  height: 250px;
+}
+.main-discover h2 {
+  text-align: center;
+  padding-top: 40px;
+  width: 280px;
+  margin: 0 auto;
+}
+.main-discover p {
+  text-align: center;
+  padding: 15px 0;
+}
+.main-discover .explor {
+  text-align: center;
+  margin: 0 auto;
+  padding: 15px 0;
+  width: 200px;
+  height: 50px;
+  background: linear-gradient(to right, #9356dc, #ff79da);
+  color: white;
+  border-radius: 30px;
+  cursor: pointer;
+  box-shadow: 1px 1px 10px 0 #353535;
+}
+.main-discover .explor:hover {
+  opacity: 0.8;
+}
+
+.main-operation {
+  margin-bottom: 20px;
+}
+.main-operation h2 {
+  text-align: center;
+  padding: 20px 0;
+}
+@media screen and (max-width: 900px) {
+  .main-operation h2 {
+    text-align: start;
+    padding-left: 20px;
+  }
+}
+.main-operation .steps {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-around;
+}
+@media screen and (max-width: 900px) {
+  .main-operation .steps {
+    flex-direction: column;
+    padding: 0 20px;
+  }
+}
+.main-operation .steps div {
+  width: 250px;
+  height: 50px;
+  display: flex;
+  flex-flow: row nowrap;
+  background: #f0ecec;
+  padding: 15px 0;
+  border-radius: 30px;
+  box-shadow: 1px 1px 10px 0 #353535;
+  cursor: pointer;
+}
+@media screen and (max-width: 900px) {
+  .main-operation .steps div {
+    margin-bottom: 20px;
+    width: 100%;
+  }
+}
+.main-operation .steps div:hover {
+  background: #fff;
+  transition: all 0.5s;
+  transform: scale(1.02);
+}
+.main-operation .steps div:hover i {
+  color: #9356DC;
+}
+.main-operation .steps div .step-number {
+  text-align: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 50px;
+  background: #9356DC;
+  color: white;
+  position: relative;
+  top: -5px;
+  left: -7px;
+  padding-top: 5px;
+}
+.main-operation .steps div i {
+  padding-right: 20px;
+}
+
+.main-restaurants {
+  background: #f0ecec;
+  height: 800px;
+}
+@media screen and (max-width: 900px) {
+  .main-restaurants {
+    height: 1500px;
+  }
+}
+.main-restaurants h2 {
+  text-align: center;
+  padding: 20px 0;
+}
+.main-restaurants .all-restaurants {
+  height: 620px;
+  max-width: 630px;
+  margin: 20px auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 25px;
+}
+@media screen and (max-width: 900px) {
+  .main-restaurants .all-restaurants {
+    display: flex;
+    flex-flow: column nowrap;
+  }
+}
+.main-restaurants .all-restaurants .restaurant {
+  background: #fff;
+  border-radius: 20px;
+  height: 300px;
+  width: auto;
+  display: grid;
+  position: relative;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(4, 1fr);
+  grid-template-areas: "img" "img" "img" "text";
+}
+.main-restaurants .all-restaurants .restaurant:hover {
+  transition: all 1s;
+  transform: scale(1.03);
+}
+.main-restaurants .all-restaurants .restaurant:nth-child(1)::after, .main-restaurants .all-restaurants .restaurant:nth-child(2)::after {
+  content: "Nouveau";
+  max-width: 70px;
+  width: auto;
+  max-height: 20px;
+  background: #99E2D0;
+  border-radius: 10px;
+  padding: 0.5rem 0.5rem;
+  position: absolute;
+  opacity: 0.7;
+  top: 1rem;
+  right: 1rem;
+  animation: shake 1s linear infinite;
+}
+@media screen and (max-width: 900px) {
+  .main-restaurants .all-restaurants .restaurant {
+    margin: 0 auto;
+  }
+}
+.main-restaurants .all-restaurants .restaurant .case-img {
+  grid-area: img;
+  width: auto;
+  height: 100%;
+  min-width: 70px;
+}
+@media screen and (max-width: 900px) {
+  .main-restaurants .all-restaurants .restaurant .case-img {
+    width: 250px;
+  }
+}
+.main-restaurants .all-restaurants .restaurant img {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px 10px 0 0;
+  object-fit: cover;
+}
+.main-restaurants .all-restaurants .text {
+  height: 100px;
+  grid-area: text;
+  display: flex;
+  position: relative;
+}
+.main-restaurants .all-restaurants .text .presentation {
+  display: block;
+  width: auto;
+  padding: 20px;
+}
+.main-restaurants .all-restaurants .text .presentation h3 {
+  text-decoration: none;
+}
+.main-restaurants .all-restaurants .text .presentation p {
+  text-decoration: none;
+}
+.main-restaurants .all-restaurants .text .heart {
+  width: auto;
+  position: absolute;
+  right: 1rem;
+  top: 1.5rem;
+}
+.main-restaurants .all-restaurants .text .heart:hover .fas {
+  display: flex;
+}
+.main-restaurants .all-restaurants .text .heart:hover .far {
+  display: none;
+}
+.main-restaurants .all-restaurants .text .heart i {
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+.main-restaurants .all-restaurants .text .heart .fas {
+  color: transparent;
+  background-image: linear-gradient(to right, #9356dc, #ff79da);
+  background-clip: text;
+  -webkit-background-clip: text;
+  position: absolute;
+  right: 0.4px;
+  display: none;
+}
+
+main {
+  height: 1000px;
+}
+main .bloc-img {
+  width: 100%;
+  height: 400px;
+  position: absolute;
+  top: -10px;
+}
+main .bloc-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+main .menus {
+  width: 95%;
+  height: 650px;
+  margin: 0 auto;
+  background: #f0ecec;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  padding: 25px;
+  position: relative;
+  top: 340px;
+  display: block;
+}
+@media screen and (max-width: 1350px) {
+  main .menus {
+    height: 1380px;
+  }
+}
+main .menus h2 {
+  font-family: "Shrikhand", cursive;
+  margin-bottom: 30px;
+}
+main .menus .heart {
+  width: auto;
+  position: absolute;
+  right: 1rem;
+  top: 1.5rem;
+  position: absolute;
+  right: 15px;
+  top: 25px;
+}
+main .menus .heart:hover .fas {
+  display: flex;
+}
+main .menus .heart:hover .far {
+  display: none;
+}
+main .menus .heart i {
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+main .menus .heart .fas {
+  color: transparent;
+  background-image: linear-gradient(to right, #9356dc, #ff79da);
+  background-clip: text;
+  -webkit-background-clip: text;
+  position: absolute;
+  right: 0.4px;
+  display: none;
+}
+main .menus .menu {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 50px;
+}
+@media screen and (max-width: 1350px) {
+  main .menus .menu {
+    display: flex;
+    flex-flow: column nowrap;
+  }
+}
+main .menus .menu div {
+  position: relative;
+}
+main .menus .menu div h3 {
+  margin-bottom: 50px;
+}
+main .menus .menu div h3::after {
+  content: "";
+  width: 50px;
+  height: 4px;
+  background: #99E2D0;
+  position: absolute;
+  top: 25px;
+  left: 0;
+}
+@media screen and (max-width: 1350px) {
+  main .menus .menu div h3 {
+    margin-bottom: 20px;
+  }
+}
+main .menus .menu div .entree,
+main .menus .menu div .plat,
+main .menus .menu div .dessert {
+  display: grid;
+  background: #f0ecec;
+  gap: 25px;
+}
+main .menus .menu div .entree .entree1,
+main .menus .menu div .plat .entree1,
+main .menus .menu div .dessert .entree1 {
+  animation: load 0s forwards;
+}
+main .menus .menu div .entree .entree2,
+main .menus .menu div .plat .entree2,
+main .menus .menu div .dessert .entree2 {
+  animation: load 0.2s forwards;
+}
+main .menus .menu div .entree .entree3,
+main .menus .menu div .plat .entree3,
+main .menus .menu div .dessert .entree3 {
+  animation: load 0.4s forwards;
+}
+main .menus .menu div .entree .plat1,
+main .menus .menu div .plat .plat1,
+main .menus .menu div .dessert .plat1 {
+  animation: load 0.6s forwards;
+}
+main .menus .menu div .entree .plat2,
+main .menus .menu div .plat .plat2,
+main .menus .menu div .dessert .plat2 {
+  animation: load 0.8s forwards;
+}
+main .menus .menu div .entree .plat3,
+main .menus .menu div .plat .plat3,
+main .menus .menu div .dessert .plat3 {
+  animation: load 1s forwards;
+}
+main .menus .menu div .entree .dessert1,
+main .menus .menu div .plat .dessert1,
+main .menus .menu div .dessert .dessert1 {
+  animation: load 1.2s forwards;
+}
+main .menus .menu div .entree .dessert2,
+main .menus .menu div .plat .dessert2,
+main .menus .menu div .dessert .dessert2 {
+  animation: load 1.4s forwards;
+}
+main .menus .menu div .entree .dessert3,
+main .menus .menu div .plat .dessert3,
+main .menus .menu div .dessert .dessert3 {
+  animation: load 1.6s forwards;
+}
+main .menus .menu div .entree div,
+main .menus .menu div .plat div,
+main .menus .menu div .dessert div {
+  height: auto;
+  max-width: 555px;
+  background: #fff;
+  border-radius: 20px;
+  position: relative;
+  padding: 15px 20px;
+  cursor: pointer;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  grid-template-rows: 1fr auto;
+  grid-template-areas: "name price" "p price";
+}
+main .menus .menu div .entree div:hover .price,
+main .menus .menu div .plat div:hover .price,
+main .menus .menu div .dessert div:hover .price {
+  padding-right: 50px;
+  -webkit-transition: 0.5s ease;
+  transition: 0.5s ease;
+}
+main .menus .menu div .entree div:hover .check,
+main .menus .menu div .plat div:hover .check,
+main .menus .menu div .dessert div:hover .check {
+  display: flex;
+}
+@media screen and (max-width: 1350px) {
+  main .menus .menu div .entree div,
+main .menus .menu div .plat div,
+main .menus .menu div .dessert div {
+    max-width: none;
+    width: auto;
+  }
+}
+main .menus .menu div .entree div .name,
+main .menus .menu div .plat div .name,
+main .menus .menu div .dessert div .name {
+  grid-area: name;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+main .menus .menu div .entree div p,
+main .menus .menu div .plat div p,
+main .menus .menu div .dessert div p {
+  grid-area: p;
+}
+main .menus .menu div .entree div .price,
+main .menus .menu div .plat div .price,
+main .menus .menu div .dessert div .price {
+  grid-area: price;
+  position: relative;
+  top: 10px;
+}
+main .menus .menu div .entree div .check,
+main .menus .menu div .plat div .check,
+main .menus .menu div .dessert div .check {
+  max-width: 60px;
+  height: 100%;
+  display: none;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  border-bottom-left-radius: 0;
+  border-top-left-radius: 0;
+  background: #99E2D0;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  right: 0;
+  top: 0;
+  animation: scaleUpRight 0.5s forwards;
+}
+main .menus .menu div .entree div .check .fa-check-circle,
+main .menus .menu div .plat div .check .fa-check-circle,
+main .menus .menu div .dessert div .check .fa-check-circle {
+  font-size: 30px;
+  color: #fff;
+  padding: 0 6px 0 0;
+  background: #99E2D0;
+  animation: rotateCheck 0.5s forwards;
+}
+main .menus .commande {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+}
+main .menus .commande button {
+  background: linear-gradient(to right, #9356dc, #ff79da);
+  height: 40px;
+  width: 100px;
+  border: none;
+  border-radius: 20px;
+  outline: none;
+  color: white;
+  font-weight: 700;
+  cursor: pointer;
+}
+main .menus .commande button:hover {
+  box-shadow: 1px 1px 10px 0 #353535;
+  transition: all 0.3s;
+  transform: scale(1.01);
+}
+
+/*# sourceMappingURL=style.css.map */

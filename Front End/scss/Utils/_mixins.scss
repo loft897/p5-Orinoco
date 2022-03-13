@@ -1,0 +1,88 @@
+@mixin param-head {
+  background: #fff;
+  text-align: center;
+  padding: 20px;
+}
+
+@mixin param-h2{
+  text-align: center;
+  padding: 20px 0;
+}
+
+@mixin param-new{
+  &::after{
+    content: "Nouveau";
+    max-width: 70px;
+    width: auto;
+    max-height: 20px;
+    background: $tertiary;
+    border-radius: 10px;
+    padding: 0.5rem 0.5rem;
+    position: absolute;
+    opacity: 0.7;
+    top: 1rem;
+    right: 1rem;
+    animation: shake 1s linear infinite;
+  }
+}
+   
+@mixin param-heart{
+  width: auto;
+  position: absolute;
+  right: 1rem;
+  top: 1.5rem;
+  &:hover {
+    .fas {
+      display: flex;
+    }
+
+    .far {
+      display: none;
+    }
+  }
+  i {
+    font-size: 1.5rem;
+    cursor: pointer;
+  }
+  .fas {
+    color: transparent;
+    background-image: $linear-gradient;
+    background-clip: text;
+    -webkit-background-clip: text;
+    position: absolute;
+    right: 0.4px;
+    display: none;
+  }
+}
+
+@mixin anim-menu{
+  .entree1 {
+    animation: load 0s forwards;  
+  }
+  .entree2 {
+    animation: load 0.2s forwards;  
+  }
+  .entree3 {
+    animation: load 0.4s forwards;   
+  }
+  
+  .plat1 {
+    animation: load 0.6s forwards;  
+  }
+  .plat2 {
+    animation: load 0.8s forwards;  
+  }
+  .plat3 {
+    animation: load 1s forwards;   
+  }
+  
+  .dessert1 {
+    animation: load 1.2s forwards;  
+  }
+  .dessert2 {
+    animation: load 1.4s forwards;  
+  }
+  .dessert3 {
+    animation: load 1.6s forwards;   
+  }
+}

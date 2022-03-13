@@ -1,0 +1,60 @@
+footer {
+  height: 120px;
+  background: $bg-dark;
+  position: relative;
+  padding: 0 30px;
+  @include xl {
+    top: 650px;
+  }
+  @include lg {
+    height: 230px;
+    .bloc {
+      width: auto;
+      display: flex;
+      flex-flow: column nowrap;
+    }
+  }
+  h3 {
+    color: #fff;
+    font-family: $ff-logo-title;
+    padding: 30px 0;
+    @include lg {
+      display: flex;
+      justify-content: center;
+    }
+  }
+
+  ul {
+    max-width: 700px;
+    list-style: none;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    @include lg {
+      display: block;
+      text-align: center;
+      width: auto;
+    }
+
+    li {
+      @include lg {
+        padding-bottom: 10px;
+      }
+      &:hover {
+        text-decoration: underline;
+      }
+      a,
+      i {
+        padding-right: 5px;
+        color: white;
+      }
+    }
+  }
+}
+
+.footer {
+  top: 240px;
+  @include lg {
+    top: 1050px;
+  }
+}

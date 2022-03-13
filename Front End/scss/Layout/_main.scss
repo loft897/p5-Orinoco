@@ -1,0 +1,8 @@
+main {
+    position: relative;
+    top: 10px;
+    @include lg {
+      width: 100%;
+       }
+   
+  }
