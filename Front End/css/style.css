@@ -263,7 +263,7 @@ main .our-products .products .card-product .case-info .price-product {
   padding-top: 5px;
   width: 400px;
   position: absolute;
-  bottom: 90px;
+  bottom: 10px;
   left: 50px;
 }
 .article .case-product .case-info .info-cart p {
@@ -292,6 +292,183 @@ main .our-products .products .card-product .case-info .price-product {
 .article .case-product .case-info .buttons button:hover {
   transition: all 0.5s;
   transform: scale(1.05);
+}
+
+.cart {
+  height: auto;
+  padding-bottom: 20px;
+  font-family: "Rowdies", cursive;
+}
+.cart .case-cart {
+  padding: 20px;
+  width: 600px;
+  margin: 0 auto;
+  background: #f0ecec;
+  border-radius: 10px;
+}
+.cart .case-cart .empty-card {
+  height: 651px;
+  font-size: 1.5rem;
+}
+.cart .case-cart .title {
+  padding-bottom: 15px;
+}
+.cart .case-cart .resume {
+  display: flex;
+  justify-content: space-between;
+  min-height: 50px;
+  padding-right: 50px;
+}
+.cart .case-cart .resume div {
+  display: block;
+}
+.cart .case-cart .resume div h3 {
+  text-decoration: underline;
+}
+.cart .case-cart .resume .descript {
+  position: relative;
+}
+.cart .case-cart .resume .descript .case-img {
+  padding-top: 10px;
+  width: 70px;
+  height: 50px;
+}
+.cart .case-cart .resume .descript .case-img img {
+  width: 100%;
+  border-radius: 5px;
+}
+.cart .case-cart .resume .descript .case-color {
+  width: 10px;
+  height: 10px;
+  border-radius: 50px;
+  border: 1px solid black;
+  position: relative;
+  right: -75px;
+  top: -47px;
+}
+.cart .case-cart .resume .name .case-name {
+  padding-top: 10px;
+  width: 70px;
+  height: 50px;
+}
+.cart .case-cart .resume .quantity .case-quantity {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 50px;
+  position: relative;
+  top: -5px;
+}
+.cart .case-cart .resume .quantity .case-quantity button {
+  width: 20px;
+  font-family: "Rowdies", cursive;
+  background: gold;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.cart .case-cart .resume .price .case-price {
+  padding-top: 10px;
+  width: 70px;
+  height: 50px;
+}
+.cart .case-cart .total-u {
+  position: relative;
+}
+.cart .case-cart .total-u .case-priceTU {
+  padding-top: 10px;
+  width: 70px;
+  height: 50px;
+}
+.cart .case-cart .total-u .case-priceTU h4 {
+  width: 100px;
+}
+.cart .case-cart .total {
+  padding: 15px 0;
+}
+.cart .case-cart .buttons {
+  padding: 80px 50px 0;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0 0 0;
+}
+.cart .case-cart .buttons button {
+  height: 40px;
+  width: 150px;
+  border: none;
+  outline: none;
+  border-radius: 10px;
+  font-weight: 700;
+  padding: auto 5px;
+  background: gold;
+  cursor: pointer;
+}
+.cart .case-cart .buttons button:hover {
+  transition: all 0.5s;
+  transform: scale(1.05);
+}
+.cart .case-cart .delete .case-del {
+  padding-top: 10px;
+  width: 70px;
+  height: 50px;
+  width: auto;
+}
+.cart .case-cart .delete .case-del::after {
+  content: "🗑";
+  position: relative;
+  right: -50px;
+  bottom: -21px;
+  cursor: pointer;
+}
+.cart .case-cart .shipping {
+  padding: 0 50px;
+}
+.cart .case-cart .shipping .info-shipping {
+  text-align: center;
+  padding-bottom: 20px;
+}
+.cart .case-cart .shipping form .data {
+  margin-bottom: 10px;
+  position: relative;
+}
+.cart .case-cart .shipping form .data .icone-verif {
+  width: 25px;
+  position: absolute;
+  right: 3px;
+  top: 22.5px;
+  display: none;
+}
+.cart .case-cart .shipping form .data .message-alert {
+  margin: 0 23px;
+  text-align: center;
+  color: red;
+  display: none;
+}
+.cart .case-cart .shipping form .data input {
+  width: 100%;
+  height: 30px;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  padding-left: 10px;
+  font-size: 1rem;
+  font-family: "Rowdies", cursive;
+}
+.cart .case-cart .shipping form .data h4 {
+  position: absolute;
+  width: 400px;
+  background: white;
+  top: 25px;
+  left: 10px;
+}
+.cart .case-cart .shipping form .communes {
+  background: lightgray;
+  list-style: none;
+  padding: 10px;
+  border-radius: 10px;
+}
+.cart .case-cart .shipping form .communes .commune {
+  cursor: pointer;
 }
 
 footer {

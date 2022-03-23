@@ -42,8 +42,166 @@
 
     <!-- Main -->
 
-    <main class="article">
-      <div class="case-cart"></div>
+    <main class="article cart">
+      <div class="case-cart">
+        <div class="title"><h2>Votre panier</h2></div>
+        <div class="resume">
+          <div class="descript">
+            <h3>Produit</h3>
+            <div class="valuesI"></div>
+          </div>
+          <div class="name">
+            <h3>Nom</h3>
+            <div class="valuesN"></div>
+          </div>
+          <div class="quantity" id="quantity">
+            <h3>Quantité</h3>
+            <div class="valuesQ"></div>
+          </div>
+          <div class="price">
+            <h3>Prix</h3>
+            <div class="valuesP"></div>
+          </div>
+          <div class="total-u">
+            <h3>Total U</h3>
+            <div class="valuesTU"></div>
+          </div>
+          <div class="delete">
+            <h3></h3>
+            <div class="valuesDEL"></div>
+          </div>
+        </div>
+        <div class="total"><h2></h2></div>
+        <div class="buttons">
+          <a href="/Front End/index.html"
+            ><button class="back-product">Revenir aux produits</button></a
+          >
+          <button class="empty-cart">Vider le panier</button>
+        </div>
+        <div class="shipping">
+          <div class="info-shipping"><h3>Votre adresse de livraison</h3></div>
+          <form class="form">
+            <div class="data">
+              <label for="firstname">Votre prénom</label>
+              <input
+                type="text"
+                id="firstname"
+                placeholder="Prénom..."
+                autocomplete="off"
+              />
+              <img
+                src="/Front End/ressources/check.svg"
+                alt="icone de validation"
+                class="icone-verif"  id="icone-verif"
+              />
+              <span class="message-alert" id="message-alert"
+                >Entrer un preénom entre 3 et 24 caractères.</span
+              >
+            </div>
+            <div class="data">
+              <label for="lastname">Votre nom</label>
+              <input
+                type="text"
+                id="lastname"
+                placeholder="Nom..."
+                autocomplete="off"
+              />
+              <img
+                src="/Front End/ressources/check.svg"
+                alt="icone de validation"
+                class="icone-verif"
+              />
+              <span class="message-alert"
+                >Entrer un nom entre 3 et 24 caractères.</span
+              >
+            </div>
+            <div class="data">
+              <label for="email">Votre email</label>
+              <input
+                type="email"
+                id="email"
+                placeholder="Email..."
+                autocomplete="off"
+              />
+              <img
+                src="/Front End/ressources/check.svg"
+                alt="icone de validation"
+                class="icone-verif"
+              />
+              <span class="message-alert">Entrer un email valide.</span>
+            </div>
+            <div class="data">
+              <label for="number">Votre numéro</label>
+              <input
+                type="text"
+                id="number"
+                placeholder="Numero..."
+                autocomplete="off"
+                maxlength="10"
+              />
+              <img
+                src="/Front End/ressources/check.svg"
+                alt="icone de validation"
+                class="icone-verif"
+              />
+              <span class="message-alert">Entrer un numéro valide.</span>
+            </div>
+            <div class="data">
+              <label for="address">Votre adresse</label>
+              <input
+                type="text"
+                id="address"
+                placeholder="Adresse..."
+                autocomplete="off"
+              />
+              <img
+                src="/Front End/ressources/check.svg"
+                alt="icone de validation"
+                class="icone-verif"
+              />
+              <span class="message-alert">Entrer un adresse valide.</span>
+            </div>
+            <div class="data">
+              <label for="cp">Le code postal</label>
+              <input
+                type="text"
+                id="cp"
+                placeholder="Code postal..."
+                autocomplete="off"
+                maxlength="5"
+              />
+              <img
+                src="/Front End/ressources/check.svg"
+                alt="icone de validation"
+                class="icone-verif"
+              />
+              <span class="message-alert">Entrer un code postal valide.</span>
+            </div>
+            <div class="data">
+              <label for="city">La ville</label>
+              <input
+                type="text"
+                id="city"
+                placeholder="Ville..."
+                autocomplete="off"
+              />
+              <h4></h4>
+              <img
+                src="/Front End/ressources/check.svg"
+                alt="icone de validation"
+                class="icone-verif"
+              />
+              <span class="message-alert">Entrer un ville valide.</span>
+            </div>
+          </form>
+        </div>
+        <!-- /Front End/pages/order.html -->
+        <div class="buttons">
+          <a href="#">
+          </a>
+          <button class="order">Commander</button>
+        </div>
+      </div>
     </main>
 
     <!-- Footer -->
@@ -55,9 +213,3 @@
 
   <script src="/Front End/script/cart.js"></script>
 </html>
-
-<!-- <div class="buttons">
-  <a href="/Front End/pages/order.html"
-    ><button class="back-product">Commander</button></a
-  >
-</div> -->

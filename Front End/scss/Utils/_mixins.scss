@@ -6,13 +6,19 @@
   background: gold;
 }
 
-@mixin param-h2{
+@mixin param-h2 {
   text-align: center;
   padding: 20px 0;
 }
 
-@mixin param-new{
-  &::after{
+@mixin param-case {
+  padding-top: 10px;
+  width: 70px;
+  height: 50px;
+}
+
+@mixin param-new {
+  &::after {
     content: "Nouveau";
     max-width: 70px;
     width: auto;
@@ -27,8 +33,29 @@
     animation: shake 1s linear infinite;
   }
 }
-   
-@mixin param-heart{
+
+@mixin param-button {
+  padding: 80px 50px 0;
+  display: flex;
+  justify-content: space-between;
+  button {
+    &:hover {
+      transition: all 0.5s;
+      transform: scale(1.05);
+    }
+    height: 40px;
+    width: 150px;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    font-weight: 700;
+    padding: auto 5px;
+    background: gold;
+    cursor: pointer;
+  }
+}
+
+@mixin param-heart {
   width: auto;
   position: absolute;
   right: 1rem;
@@ -57,34 +84,34 @@
   }
 }
 
-@mixin anim-menu{
+@mixin anim-menu {
   .entree1 {
-    animation: load 0s forwards;  
+    animation: load 0s forwards;
   }
   .entree2 {
-    animation: load 0.2s forwards;  
+    animation: load 0.2s forwards;
   }
   .entree3 {
-    animation: load 0.4s forwards;   
+    animation: load 0.4s forwards;
   }
-  
+
   .plat1 {
-    animation: load 0.6s forwards;  
+    animation: load 0.6s forwards;
   }
   .plat2 {
-    animation: load 0.8s forwards;  
+    animation: load 0.8s forwards;
   }
   .plat3 {
-    animation: load 1s forwards;   
+    animation: load 1s forwards;
   }
-  
+
   .dessert1 {
-    animation: load 1.2s forwards;  
+    animation: load 1.2s forwards;
   }
   .dessert2 {
-    animation: load 1.4s forwards;  
+    animation: load 1.4s forwards;
   }
   .dessert3 {
-    animation: load 1.6s forwards;   
+    animation: load 1.6s forwards;
   }
 }

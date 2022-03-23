@@ -141,7 +141,7 @@ main {
         padding: 0 0 10px;
       }
 
-      .info-cart{
+      .info-cart {
         display: none;
         background: lightgreen;
         border-radius: 10px;
@@ -149,11 +149,11 @@ main {
         padding-top: 5px;
         width: 400px;
         position: absolute;
-        bottom: 90px;
+        bottom: 10px;
         left: 50px;
-        
-        p{
-          &::after{
+
+        p {
+          &::after {
             content: "\01F60A ";
           }
           padding-left: 50px;
@@ -162,23 +162,182 @@ main {
       }
 
       .buttons {
-        padding: 80px 50px 0;
-        display: flex;
-        justify-content: space-between;
-        button {
-          &:hover {
-            transition: all 0.5s;
-            transform: scale(1.05);
+        @include param-button;
+      }
+    }
+  }
+}
+
+.cart {
+  // position: relative;
+  height: auto;
+  padding-bottom: 20px;
+  font-family: $ff-h;
+  .case-cart {
+    padding: 20px;
+    width: 600px;
+    margin: 0 auto;
+    background: $gray-light;
+    border-radius: 10px;
+    .empty-card {
+      height: 651px;
+      font-size: 1.5rem;
+    }
+    .title {
+      padding-bottom: 15px;
+    }
+
+    .resume {
+      display: flex;
+      justify-content: space-between;
+      min-height: 50px;
+      padding-right: 50px;
+      div {
+        display: block;
+        h3 {
+          text-decoration: underline;
+        }
+      }
+
+      .descript {
+        position: relative;
+        .case-img {
+          @include param-case;
+          img {
+            width: 100%;
+            border-radius: 5px;
           }
-          height: 40px;
-          width: 150px;
-          border: none;
-          outline: none;
-          border-radius: 10px;
-          font-weight: 700;
-          padding: auto 5px;
-          background: gold;
+        }
+
+        .case-color {
+          width: 10px;
+          height: 10px;
+          border-radius: 50px;
+          border: 1px solid black;
+          // background: green;
+          position: relative;
+          right: -75px;
+          top: -47px;
+        }
+      }
+
+      .name {
+        .case-name {
+          @include param-case;
+        }
+        // }
+      }
+
+      .quantity {
+        .case-quantity {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          height: 50px;
+          position: relative;
+          top: -5px;
+          button {
+            width: 20px;
+            font-family: $ff-h;
+            background: gold;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+          }
+          // align-items:center;
+        }
+      }
+
+      .price {
+        .case-price {
+          @include param-case;
+        }
+      }
+    }
+
+    .total-u {
+      position: relative;
+      .case-priceTU {
+        h4 {
+          width: 100px;
+        }
+        @include param-case;
+      }
+    }
+
+    .total {
+      padding: 15px 0;
+    }
+    .buttons {
+      @include param-button;
+      padding: 10px 0 0 0;
+    }
+
+    .delete {
+      .case-del {
+        &::after {
+          content: "\01F5D1";
+          position: relative;
+          right: -50px;
+          bottom: -21px;
           cursor: pointer;
+        }
+        @include param-case;
+        width: auto;
+      }
+    }
+
+    .shipping {
+      padding: 0 50px;
+      .info-shipping {
+        text-align: center;
+        padding-bottom: 20px;
+      }
+      form {
+        .data {
+          margin-bottom: 10px;
+          position: relative;
+          .icone-verif {
+            width: 25px;
+            position: absolute;
+            right: 3px;
+            top: 22.5px;
+            display: none;
+          }
+          .message-alert {
+            margin: 0 23px;
+            text-align: center;
+            color: red;
+            display: none;
+          }
+          input {
+            width: 100%;
+            height: 30px;
+            border-radius: 5px;
+            border: none;
+            outline: none;
+            padding-left: 10px;
+            font-size: 1rem;
+            font-family: $ff-h;
+          }
+          h4 {
+            position: absolute;
+            width: 400px;
+            background: white;
+            top: 25px;
+            left: 10px;
+          }
+        }
+        .communes {
+          background: lightgray;
+          list-style: none;
+          padding: 10px;
+          border-radius: 10px;
+          // position: absolute;
+          //bottom: 50px;
+          .commune{
+            cursor: pointer;
+        }
         }
       }
     }
