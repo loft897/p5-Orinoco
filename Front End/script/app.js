@@ -12,7 +12,6 @@ function fecthTeddies() {
         contact avec le support.`;
     })
     .then((allTeddies) => {
-      // console.log(allTeddies);
       createDisplayTeddies(allTeddies);
     });
 }

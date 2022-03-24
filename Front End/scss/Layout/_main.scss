@@ -147,10 +147,10 @@ main {
         border-radius: 10px;
         height: 30px;
         padding-top: 5px;
-        width: 400px;
+        width: 450px;
         position: absolute;
         bottom: 10px;
-        left: 50px;
+        left: 25px;
 
         p {
           &::after {
@@ -342,4 +342,14 @@ main {
       }
     }
   }
+}
+
+.case-order{
+  min-height: 654px;
+  div, .total-amount{
+    padding-bottom: 20px;
+
+  }
+
+  
 }

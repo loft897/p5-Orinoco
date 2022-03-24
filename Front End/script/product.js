@@ -3,7 +3,6 @@ let img = document.querySelector(".case-img > img");
 let nameP = document.querySelector(".name > h3");
 let description = document.querySelector(".description > h4");
 let priceP = document.querySelector(".price > h4");
-// let quantity = document.querySelector(".valueQ");
 let color = document.querySelector(".color > select");
 let addCart = document.querySelector(".add-cart");
 let infoCart = document.querySelector(".info-cart");
@@ -25,8 +24,8 @@ fetch(`http://localhost:3000/api/teddies/${idProduct}`)
   })
 
   // Affichage article
+
   .then((data) => {
-    //   console.log(data);
     img.src = data.imageUrl;
 
     nameP.innerHTML = data.name;
@@ -43,6 +42,7 @@ fetch(`http://localhost:3000/api/teddies/${idProduct}`)
     }
 
     // Ajout article au panier
+
     let arrayProducts = JSON.parse(localStorage.getItem("products"));
 
     addCart.addEventListener("click", (e) => {
@@ -54,16 +54,7 @@ fetch(`http://localhost:3000/api/teddies/${idProduct}`)
         colorArticle: color.value,
         quantityArticle: 1,
         priceUnity: data.price / 100,
-        // priceTU: (data.price/100) * quantityArticle
       };
-      console.log(optionArticle.quantityArticle);
-      //console.log(optionArticle);
-
-      // fin de l'ecoute
-
-      //   let optionArticleJson = JSON.stringify(optionArticle);
-      //     localStorage.setItem(`product`, optionArticleJson);
-
       if (arrayProducts == null) {
         arrayProducts = [];
         arrayProducts.push(optionArticle);
@@ -105,48 +96,8 @@ fetch(`http://localhost:3000/api/teddies/${idProduct}`)
                 infoCart.style.display = "none";
               }, 2500)
             );
-            //   } else  {
-            //     return (
-            //       arrayProducts.push(optionArticle),
-            //       localStorage.setItem("products", JSON.stringify(arrayProducts))
-            //     );
           }
         }
       }
-
-      //   if(localStorage.getItem("products") !== null){
-      //       arrayProducts = JSON.parse(localStorage.getItem("products"));
-      //   }
-
-      //   arrayProducts.push(optionArticle);
-      //   localStorage.setItem("products", JSON.stringify(arrayProducts));
-
-      //   function displayAlert() {
-      //     if (optionArticle.quantityArticle < 1) {
-      //       setTimeout(() => {
-      //         infoCartP.innerHTML = ` Augmentez la quantité de l'article svp !`;
-      //         infoCart.style.display = "flex";
-      //       }, 0);
-
-      //       setTimeout(() => {
-      //         infoCart.style.display = "none";
-      //       }, 2500);
-      //     } else {
-      //       setTimeout(() => {
-      //         infoCartP.innerHTML = `Merci, ${data.name} a été ajouté au panier ! `;
-      //         infoCart.style.display = "flex";
-      //       }, 0);
-
-      //       setTimeout(() => {
-      //         infoCart.style.display = "none";
-      //       }, 2500);
-
-      //       // gestion local storage
-      //     }
-      //   }
-
-      //   displayAlert();
     });
   });
-
-console.log(localStorage.length);

@@ -8,61 +8,8 @@ const deleleItem = document.querySelector(".valuesDEL");
 const totalP = document.querySelector(".total > h2");
 const emptyCart = document.querySelector(".empty-cart");
 
-// const Tan = "#D2B48C";
-// const Chocolate = "#D2691E";
-// const Black = "#000000";
-// const White = "#ffffff";
-// const Brown = "#A52A2A";
-// const paleBrown = "#755847";
-// const darkBrown = "#3E2525";
-// const Blue = "#0000FF";
-// const Pink = "#FFC0CB";
-// const Beige = "#F5F5DC";
-
 let product = localStorage.getItem("products");
-// let Array  = JSON.parse(arrayProducts);
 let ArrayProducts = JSON.parse(localStorage.getItem("products"));
-
-// console.log(ArrayProducts )
-
-// console.log(ArrayProducts );
-// console.log(ArrayProducts [0] == ArrayProducts [1]);
-// console.log(
-//   JSON.stringify(ArrayProducts [4]) == JSON.stringify(ArrayProducts [3])
-// );
-
-// for (let i = 0; i < ArrayProducts .length; i++) {
-//   if (
-//     JSON.stringify(ArrayProducts [i]) ==
-//       JSON.stringify(ArrayProducts [1]) &&
-//     i != 0
-//   ) {
-//     ArrayProducts .push(ArrayProducts [i]);
-//     console.log(ArrayProducts );
-//   }
-// }
-
-// let eleves = [
-//     {nom: 'DUPONT', prenom: 'Jeanne', classe: 'A'},
-//     {nom: 'ALTAIR', prenom: 'Luc', classe: 'A'},
-//     {nom: 'DUPONT', prenom: 'Pierre', classe: 'B'},
-//     {nom: 'DUPONT', prenom: 'Arthur', classe: 'A'},
-//     {nom: 'PIONG', prenom: 'Chang', classe: 'B'},
-//     {nom: 'POPOULOS', prenom: 'Dimitrius', classe: 'B'},
-//     {nom: 'ATAC', prenom: 'Djamila', classe: 'A'}
-// ];
-
-// ArrayProducts .sort((productA, productB) => {
-//     let comparaison = productA.nameArticle.localeCompare(productB.nameArticle);
-//     if (comparaison === 0){
-//         return comparaison;
-//         comparaison = eleveA.nom.localeCompare(eleveB.nom);
-//         if (comparaison === 0){
-//             return eleveA.prenom.localeCompare(eleveB.prenom);
-//         }
-//     }
-// });
-// console.log(ArrayProducts .map(e => `${e.nameArticle}`).join('\n'));
 
 //GESTION PANIER
 
@@ -122,12 +69,8 @@ if (ArrayProducts === null || ArrayProducts == 0) {
       "#F5F5DC",
     ];
 
-    // console.log(ArrayProducts);
     let color = ArrayProducts[i].colorArticle;
-    // console.log(color);
-    // console.log(colors.includes(color));
     let index = colors.findIndex((colori) => colori === `${color}`);
-    // console.log(index);
     divColor.style.backgroundColor = `${codeColors[index]}`;
 
     // creation nom produit
@@ -226,10 +169,7 @@ if (ArrayProducts === null || ArrayProducts == 0) {
       for (let i = 0; i < ArrayProducts.length; i++) {
         let t = ArrayProducts[i].priceUnity * ArrayProducts[i].quantityArticle;
         z.push(t);
-        // console.log(z);
-
         let sum = z.reduce((a, b) => a + b);
-        // console.log(sum);
         totalP.innerText = ` Total : ${Number.parseFloat(sum).toFixed(2)} €`;
       }
     }
@@ -254,7 +194,6 @@ if (ArrayProducts === null || ArrayProducts == 0) {
 let btnDel = document.querySelectorAll(".case-del");
 for (let l = 0; l < btnDel.length; l++) {
   btnDel[l].addEventListener("click", () => {
-    // e.preventDefault();
     let IdSelectDel = ArrayProducts[l].idArticle;
     ArrayProducts = ArrayProducts.filter(
       (item) => item.idArticle !== IdSelectDel
@@ -288,6 +227,7 @@ const allImg = document.querySelectorAll(".icone-verif");
 const allSpan = document.querySelectorAll("span");
 const form = document.querySelector("form");
 let contact = {};
+let zipCode = {};
 let fn;
 let ln;
 let em;
@@ -404,6 +344,7 @@ cp.addEventListener("input", () => {
     allImg[5].src = "/Front End/ressources/check.svg";
     allSpan[5].style.display = "none";
     c = true;
+    zipCode.zipcode = `${cp.value}`;
 
     // Validation ville
 
@@ -475,6 +416,7 @@ form.addEventListener("input", () => {
 });
 
 // creation tableau avec id des produits
+
 let products = [];
 for (let i = 0; i < ArrayProducts.length; i++) {
   products.push(ArrayProducts[i].idArticle);
@@ -502,5 +444,10 @@ order.addEventListener("click", (e) => {
     })
     .then((contents) => {
       console.log(contents);
+      localStorage.setItem("contents", JSON.stringify(contents));
+      localStorage.setItem("product", JSON.stringify(ArrayProducts));
+      localStorage.setItem("zipcode", JSON.stringify(zipCode));
+      localStorage.removeItem("products");
+      window.location.href = `order.html`;
     });
 });

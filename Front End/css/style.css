@@ -261,10 +261,10 @@ main .our-products .products .card-product .case-info .price-product {
   border-radius: 10px;
   height: 30px;
   padding-top: 5px;
-  width: 400px;
+  width: 450px;
   position: absolute;
   bottom: 10px;
-  left: 50px;
+  left: 25px;
 }
 .article .case-product .case-info .info-cart p {
   padding-left: 50px;
@@ -469,6 +469,13 @@ main .our-products .products .card-product .case-info .price-product {
 }
 .cart .case-cart .shipping form .communes .commune {
   cursor: pointer;
+}
+
+.case-order {
+  min-height: 654px;
+}
+.case-order div, .case-order .total-amount {
+  padding-bottom: 20px;
 }
 
 footer {
